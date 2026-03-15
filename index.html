@@ -1,113 +1,1126 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bonus Crypto na Start</title>
-
+<title>BitMart 8th Anniversary – Join and claim your bonus!</title>
+<meta name="description" content="BitMart celebrates its 8th anniversary! Prize pool of over 1,500,000 USDT. Sign up and start earning.">
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-font-family: Arial;
-margin:0;
-background:#0f172a;
-color:white;
-text-align:center;
+  font-family:'Segoe UI',Arial,Helvetica,sans-serif;
+  background:#0a0e1a;
+  color:#fff;
+  line-height:1.6;
+  overflow-x:hidden;
 }
 
+/* Disclaimer Banner */
+.disclaimer-banner{
+  background:#1a1207;
+  border-bottom:1px solid #ffd70033;
+  padding:10px 20px;
+  text-align:center;
+  font-size:12px;
+  color:#ffd700;
+  letter-spacing:0.3px;
+}
+
+.disclaimer-banner .disclaimer-icon{
+  margin-right:6px;
+}
+
+/* Hero */
 .hero{
-padding:100px 20px;
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px 40px;
+  background:radial-gradient(ellipse at 50% 0%,#0d2a3d 0%,#0a0e1a 70%);
 }
 
-h1{
-font-size:48px;
+.hero::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><circle cx="400" cy="400" r="300" fill="none" stroke="%2300d4aa10" stroke-width="1"/><circle cx="400" cy="400" r="250" fill="none" stroke="%2300d4aa08" stroke-width="1"/><circle cx="400" cy="400" r="200" fill="none" stroke="%2300d4aa06" stroke-width="1"/></svg>') center/cover no-repeat;
+  pointer-events:none;
 }
 
-.subtitle{
-font-size:20px;
-margin-top:10px;
-color:#cbd5f5;
+.hero-content{
+  position:relative;
+  z-index:1;
+  max-width:700px;
 }
 
-.btn{
-display:inline-block;
-margin-top:30px;
-padding:18px 40px;
-background:#22c55e;
-color:white;
-text-decoration:none;
-font-size:20px;
-border-radius:10px;
+.badge{
+  display:inline-block;
+  background:linear-gradient(135deg,#00d4aa,#00b894);
+  color:#0a0e1a;
+  font-weight:700;
+  font-size:13px;
+  padding:6px 18px;
+  border-radius:20px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:24px;
 }
 
-.section{
-padding:60px 20px;
-background:#020617;
+.hero h1{
+  font-size:clamp(32px,6vw,56px);
+  font-weight:800;
+  line-height:1.15;
+  margin-bottom:16px;
 }
 
-.steps{
-max-width:600px;
-margin:auto;
-text-align:left;
-font-size:18px;
+.hero h1 span{
+  color:#00d4aa;
 }
 
+.hero .prize{
+  font-size:clamp(22px,4vw,36px);
+  font-weight:700;
+  color:#ffd700;
+  margin-bottom:12px;
+}
+
+.hero .subtitle{
+  font-size:18px;
+  color:#a0aec0;
+  margin-bottom:24px;
+  max-width:500px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Countdown Timer */
+.countdown{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin-bottom:32px;
+  position:relative;
+  z-index:1;
+}
+
+.countdown-label{
+  font-size:14px;
+  color:#a0aec0;
+  margin-right:8px;
+  font-weight:500;
+}
+
+.countdown-box{
+  background:linear-gradient(145deg,#111827,#0f1525);
+  border:1px solid #00d4aa44;
+  border-radius:10px;
+  padding:10px 14px;
+  min-width:60px;
+  text-align:center;
+}
+
+.countdown-box .num{
+  font-size:28px;
+  font-weight:800;
+  color:#00d4aa;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+
+.countdown-box .lbl{
+  font-size:10px;
+  color:#64748b;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-top:4px;
+}
+
+.countdown-sep{
+  font-size:24px;
+  font-weight:700;
+  color:#00d4aa66;
+  margin-top:-6px;
+}
+
+.cta-btn{
+  display:inline-block;
+  padding:18px 48px;
+  background:linear-gradient(135deg,#00d4aa,#00b894);
+  color:#0a0e1a;
+  text-decoration:none;
+  font-size:20px;
+  font-weight:700;
+  border-radius:12px;
+  transition:all .3s ease;
+  box-shadow:0 4px 24px rgba(0,212,170,.3);
+}
+
+.cta-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(0,212,170,.45);
+}
+
+.cta-btn-secondary{
+  display:inline-block;
+  padding:14px 36px;
+  background:transparent;
+  color:#00d4aa;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:600;
+  border-radius:12px;
+  border:2px solid #00d4aa;
+  transition:all .3s ease;
+}
+
+.cta-btn-secondary:hover{
+  background:#00d4aa15;
+  transform:translateY(-2px);
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+
+/* Promo Image */
+.promo-image{
+  margin:40px auto 0;
+  max-width:380px;
+  width:100%;
+  position:relative;
+  z-index:1;
+}
+
+.promo-image img{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 8px 40px rgba(0,0,0,.5);
+}
+
+/* Features */
+.features{
+  padding:80px 20px;
+  background:#080c16;
+}
+
+.features h2{
+  text-align:center;
+  font-size:clamp(24px,4vw,36px);
+  margin-bottom:48px;
+}
+
+.features h2 span{
+  color:#00d4aa;
+}
+
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.feature-card{
+  background:linear-gradient(145deg,#111827,#0f1525);
+  border:1px solid #1e293b;
+  border-radius:16px;
+  padding:32px 24px;
+  text-align:center;
+  transition:border-color .3s ease;
+}
+
+.feature-card:hover{
+  border-color:#00d4aa;
+}
+
+.feature-icon{
+  font-size:40px;
+  margin-bottom:16px;
+}
+
+.feature-card h3{
+  font-size:18px;
+  margin-bottom:8px;
+  color:#fff;
+}
+
+.feature-card p{
+  font-size:14px;
+  color:#94a3b8;
+}
+
+.features-cta{
+  text-align:center;
+  margin-top:40px;
+}
+
+/* How to Participate */
+.participate-section{
+  padding:80px 20px;
+  background:#0a0e1a;
+}
+
+.participate-section h2{
+  text-align:center;
+  font-size:clamp(24px,4vw,36px);
+  margin-bottom:12px;
+}
+
+.participate-section h2 span{
+  color:#00d4aa;
+}
+
+.participate-subtitle{
+  text-align:center;
+  color:#64748b;
+  font-size:15px;
+  margin-bottom:48px;
+}
+
+.participate-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:24px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.participate-card{
+  background:linear-gradient(145deg,#111827,#0f1525);
+  border:1px solid #1e293b;
+  border-radius:16px;
+  padding:32px 20px;
+  text-align:center;
+  position:relative;
+  transition:border-color .3s ease;
+}
+
+.participate-card:hover{
+  border-color:#00d4aa;
+}
+
+.participate-step-num{
+  width:52px;
+  height:52px;
+  background:linear-gradient(135deg,#00d4aa,#00b894);
+  color:#0a0e1a;
+  font-weight:800;
+  font-size:22px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 16px;
+}
+
+.participate-card h3{
+  font-size:17px;
+  margin-bottom:6px;
+  color:#fff;
+}
+
+.participate-card p{
+  font-size:13px;
+  color:#94a3b8;
+}
+
+.participate-cta{
+  text-align:center;
+  margin-top:40px;
+}
+
+/* App Screenshot Section */
+.app-section{
+  padding:80px 20px;
+  background:#080c16;
+  text-align:center;
+}
+
+.app-section h2{
+  font-size:clamp(24px,4vw,36px);
+  margin-bottom:12px;
+}
+
+.app-section h2 span{
+  color:#00d4aa;
+}
+
+.app-section .app-subtitle{
+  font-size:16px;
+  color:#a0aec0;
+  margin-bottom:40px;
+  max-width:500px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.phone-mockup{
+  max-width:320px;
+  margin:0 auto 32px;
+  position:relative;
+}
+
+.phone-frame{
+  background:#111827;
+  border:3px solid #2d3748;
+  border-radius:32px;
+  padding:12px;
+  box-shadow:0 12px 48px rgba(0,0,0,.5),0 0 60px rgba(0,212,170,.08);
+}
+
+.phone-screen{
+  background:#0b1426;
+  border-radius:22px;
+  overflow:hidden;
+  position:relative;
+}
+
+.phone-statusbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px 16px;
+  font-size:11px;
+  color:#94a3b8;
+  background:#0f1a2e;
+}
+
+.phone-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 16px;
+  background:#0f1a2e;
+  border-bottom:1px solid #1e293b;
+}
+
+.phone-nav .pair{
+  font-size:16px;
+  font-weight:700;
+  color:#fff;
+}
+
+.phone-nav .price-up{
+  color:#00d4aa;
+  font-size:13px;
+  font-weight:600;
+}
+
+.phone-chart{
+  padding:16px;
+  height:160px;
+  position:relative;
+  overflow:hidden;
+}
+
+.chart-svg{
+  width:100%;
+  height:100%;
+}
+
+.phone-orderbook{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  padding:0 12px 12px;
+  font-size:11px;
+}
+
+.orderbook-col{
+  padding:6px;
+}
+
+.orderbook-col .header{
+  color:#64748b;
+  font-size:10px;
+  text-transform:uppercase;
+  margin-bottom:6px;
+  letter-spacing:0.5px;
+}
+
+.ob-row{
+  display:flex;
+  justify-content:space-between;
+  padding:2px 0;
+  font-size:11px;
+  font-variant-numeric:tabular-nums;
+}
+
+.ob-row.sell{color:#ef4444;}
+.ob-row.buy{color:#00d4aa;}
+.ob-row .amt{color:#64748b;}
+
+.phone-bottom{
+  display:flex;
+  gap:8px;
+  padding:12px;
+  background:#0f1a2e;
+  border-top:1px solid #1e293b;
+}
+
+.phone-bottom .btn-buy{
+  flex:1;
+  background:#00d4aa;
+  color:#0a0e1a;
+  border:none;
+  padding:10px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:13px;
+}
+
+.phone-bottom .btn-sell{
+  flex:1;
+  background:#ef4444;
+  color:#fff;
+  border:none;
+  padding:10px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:13px;
+}
+
+.app-badges{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.app-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#111827;
+  border:1px solid #1e293b;
+  padding:10px 20px;
+  border-radius:10px;
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  transition:border-color .3s ease;
+}
+
+.app-badge:hover{
+  border-color:#00d4aa;
+}
+
+.app-badge-icon{
+  font-size:20px;
+}
+
+/* CTA Bottom */
+.cta-bottom{
+  padding:80px 20px;
+  text-align:center;
+  background:linear-gradient(180deg,#0a0e1a 0%,#0d2a3d 50%,#0a0e1a 100%);
+}
+
+.cta-bottom h2{
+  font-size:clamp(24px,4vw,36px);
+  margin-bottom:16px;
+}
+
+.cta-bottom .subtitle{
+  font-size:18px;
+  color:#a0aec0;
+  margin-bottom:24px;
+}
+
+.cta-bottom .countdown{
+  margin-bottom:32px;
+}
+
+.cta-bottom-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
+}
+
+/* Footer */
 .footer{
-padding:40px;
-font-size:14px;
-color:#94a3b8;
+  padding:32px 20px;
+  text-align:center;
+  font-size:13px;
+  color:#475569;
+  border-top:1px solid #1e293b;
+  background:#080c16;
+}
+
+.footer a{
+  color:#00d4aa;
+  text-decoration:none;
+}
+
+/* Pulse animation for countdown */
+@keyframes pulse{
+  0%,100%{opacity:1;}
+  50%{opacity:.5;}
+}
+
+.countdown-sep{
+  animation:pulse 1s ease-in-out infinite;
+}
+
+/* Social Proof */
+.social-proof{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-top:24px;
+  padding:12px 24px;
+  background:rgba(255,215,0,0.08);
+  border:1px solid rgba(255,215,0,0.2);
+  border-radius:40px;
+  font-size:16px;
+  font-weight:600;
+  color:#ffd700;
+  position:relative;
+  z-index:1;
+  animation:glow 2s ease-in-out infinite alternate;
+}
+
+.social-proof-fire{
+  font-size:20px;
+}
+
+@keyframes glow{
+  0%{box-shadow:0 0 8px rgba(255,215,0,0.1);}
+  100%{box-shadow:0 0 20px rgba(255,215,0,0.2);}
+}
+
+/* CTA Mid Banner */
+.cta-mid{
+  padding:60px 20px;
+  background:linear-gradient(135deg,#0d2a3d 0%,#0a1628 100%);
+  border-top:1px solid #00d4aa22;
+  border-bottom:1px solid #00d4aa22;
+}
+
+.cta-mid-inner{
+  max-width:800px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+.cta-mid-text h3{
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.cta-mid-text p{
+  color:#94a3b8;
+  font-size:15px;
+}
+
+/* FAQ Section */
+.faq-section{
+  padding:80px 20px;
+  background:#0a0e1a;
+}
+
+.faq-section h2{
+  text-align:center;
+  font-size:clamp(24px,4vw,36px);
+  margin-bottom:40px;
+}
+
+.faq-section h2 span{
+  color:#00d4aa;
+}
+
+.faq-list{
+  max-width:700px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.faq-item{
+  background:linear-gradient(145deg,#111827,#0f1525);
+  border:1px solid #1e293b;
+  border-radius:12px;
+  overflow:hidden;
+  transition:border-color .3s ease;
+}
+
+.faq-item:hover{
+  border-color:#00d4aa44;
+}
+
+.faq-item.active{
+  border-color:#00d4aa;
+}
+
+.faq-question{
+  width:100%;
+  background:none;
+  border:none;
+  color:#fff;
+  padding:20px 24px;
+  font-size:16px;
+  font-weight:600;
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.faq-question:hover{
+  color:#00d4aa;
+}
+
+.faq-icon{
+  font-size:22px;
+  color:#00d4aa;
+  transition:transform .3s ease;
+  flex-shrink:0;
+}
+
+.faq-item.active .faq-icon{
+  transform:rotate(45deg);
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .3s ease, padding .3s ease;
+}
+
+.faq-item.active .faq-answer{
+  max-height:200px;
+  padding:0 24px 20px;
+}
+
+.faq-answer p{
+  font-size:14px;
+  color:#94a3b8;
+  line-height:1.7;
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .hero{padding:40px 16px 30px;}
+  .cta-btn{padding:16px 36px;font-size:18px;}
+  .cta-btn-secondary{padding:12px 28px;font-size:14px;}
+  .promo-image{max-width:300px;}
+  .countdown-box{min-width:50px;padding:8px 10px;}
+  .countdown-box .num{font-size:22px;}
+  .countdown-label{display:none;}
+  .phone-mockup{max-width:260px;}
+  .participate-grid{grid-template-columns:1fr 1fr;}
+  .social-proof{font-size:14px;padding:10px 16px;}
+  .cta-mid-inner{flex-direction:column;text-align:center;}
+  .cta-mid-text h3{font-size:20px;}
+  .faq-question{font-size:14px;padding:16px 18px;}
+  .faq-item.active .faq-answer{padding:0 18px 16px;}
+}
+
+@media(max-width:400px){
+  .participate-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
-
 <body>
 
-<div class="hero">
-
-<h1>Odbierz bonus 100 USDT</h1>
-
-<p class="subtitle">
-Zarejestruj się na giełdzie i odbierz bonus powitalny
-</p>
-
-<a class="btn" href="https://twoj-link-ref.com" target="_blank">
-Załóż konto
-</a>
-
+<!-- Disclaimer Banner -->
+<div class="disclaimer-banner">
+  <span class="disclaimer-icon">&#9432;</span>
+  This page is an independent promotional page. Not an official BitMart website.
 </div>
 
-<div class="section">
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">Limited offer</div>
+    <h1><span>BitMart</span> 8th Anniversary<br>Mega Event</h1>
+    <p class="prize">Prize pool: 1,500,000+ USDT</p>
+    <p class="subtitle">Join BitMart, trade cryptocurrencies and win rewards on the exchange's 8th anniversary!</p>
+  </div>
 
-<h2>Dlaczego warto?</h2>
+  <!-- Countdown Timer -->
+  <div class="countdown" id="countdown">
+    <span class="countdown-label">Event ends in:</span>
+    <div class="countdown-box"><div class="num" id="cd-days">12</div><div class="lbl">Days</div></div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-box"><div class="num" id="cd-hours">23</div><div class="lbl">Hours</div></div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-box"><div class="num" id="cd-minutes">59</div><div class="lbl">Min</div></div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-box"><div class="num" id="cd-seconds">59</div><div class="lbl">Sec</div></div>
+  </div>
 
-<p>✔ Bonus powitalny</p>
-<p>✔ Niskie prowizje</p>
-<p>✔ Futures i spot</p>
-<p>✔ Aplikacja mobilna</p>
+  <!-- Hero CTA Buttons -->
+  <div class="hero-buttons">
+    <a class="cta-btn" href="https://www.bitmart.com/invited?r=cMec8H&t=1" target="_blank" rel="noopener">
+      Join Now &amp; Claim Bonus
+    </a>
+    <a class="cta-btn-secondary" href="https://www.bitmart.com/invited?r=cMec8H&t=1" target="_blank" rel="noopener">
+      Learn More
+    </a>
+  </div>
 
-</div>
+  <!-- Social Proof -->
+  <div class="social-proof">
+    <span class="social-proof-fire">&#128293;</span>
+    <span id="social-proof-count">120,847+</span> traders already joined the event
+  </div>
 
-<div class="section">
+  <div class="promo-image">
+    <img src="assets/bitmart-8th-anniversary.png" alt="BitMart 8th Anniversary Mega Event – 1,500,000+ USDT Prize Pool" loading="lazy">
+  </div>
+</section>
 
-<h2>Jak odebrać bonus</h2>
+<!-- How It Works (Middle Section) -->
+<section class="participate-section">
+  <h2>How It <span>Works</span></h2>
+  <p class="participate-subtitle">Four simple steps to start earning rewards</p>
+  <div class="participate-grid">
+    <div class="participate-card">
+      <div class="participate-step-num">1</div>
+      <h3>Create Account</h3>
+      <p>Sign up for free on BitMart using the referral link below.</p>
+    </div>
+    <div class="participate-card">
+      <div class="participate-step-num">2</div>
+      <h3>Complete First Trade</h3>
+      <p>Make your first trade worth at least 20 USDT to qualify.</p>
+    </div>
+    <div class="participate-card">
+      <div class="participate-step-num">3</div>
+      <h3>Earn Rewards</h3>
+      <p>Unlock your share of the 1,500,000+ USDT prize pool.</p>
+    </div>
+    <div class="participate-card">
+      <div class="participate-step-num">4</div>
+      <h3>Join Anniversary Event</h3>
+      <p>Access exclusive 8th anniversary bonuses and giveaways.</p>
+    </div>
+  </div>
+  <div class="participate-cta">
+    <a class="cta-btn" href="https://www.bitmart.com/invited?r=cMec8H&t=1" target="_blank" rel="noopener">
+      Get Started Now
+    </a>
+  </div>
+</section>
 
-<div class="steps">
+<!-- Why BitMart -->
+<section class="features">
+  <h2>Why <span>BitMart</span>?</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">&#127942;</div>
+      <h3>1.5M+ USDT Pool</h3>
+      <p>Massive prize pool for the 8th anniversary – trade and win!</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128200;</div>
+      <h3>Low fees</h3>
+      <p>Competitive transaction fees on spot and futures markets.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128274;</div>
+      <h3>Security</h3>
+      <p>Advanced security measures and identity verification.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128241;</div>
+      <h3>Mobile app</h3>
+      <p>Trade anywhere with the iOS and Android app.</p>
+    </div>
+  </div>
+  <div class="features-cta">
+    <a class="cta-btn" href="https://www.bitmart.com/invited?r=cMec8H&t=1" target="_blank" rel="noopener">
+      Start Trading Now
+    </a>
+    <a class="cta-btn-secondary" href="https://www.bitmart.com/invited?r=cMec8H&t=1" target="_blank" rel="noopener" style="margin-left:12px;">
+      View All Features
+    </a>
+  </div>
+</section>
 
-<p>1️⃣ Kliknij przycisk rejestracji</p>
-<p>2️⃣ Załóż konto</p>
-<p>3️⃣ Zweryfikuj konto</p>
-<p>4️⃣ Wpłać depozyt</p>
+<!-- App Screenshot Section -->
+<section class="app-section">
+  <h2>Trade on <span>BitMart</span></h2>
+  <p class="app-subtitle">Professional trading interface with real-time charts, order book and instant execution.</p>
 
-</div>
+  <div class="phone-mockup">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <!-- Status bar -->
+        <div class="phone-statusbar">
+          <span>9:41</span>
+          <span>BitMart</span>
+          <span>&#9679;&#9679;&#9679;</span>
+        </div>
+        <!-- Nav -->
+        <div class="phone-nav">
+          <span class="pair">BTC/USDT</span>
+          <span class="price-up">$67,842.50 +2.34%</span>
+        </div>
+        <!-- Chart -->
+        <div class="phone-chart">
+          <svg class="chart-svg" viewBox="0 0 280 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#00d4aa" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#00d4aa" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,80 L20,75 L40,60 L60,65 L80,45 L100,50 L120,35 L140,40 L160,25 L180,30 L200,15 L220,20 L240,10 L260,18 L280,12" stroke="#00d4aa" stroke-width="2" fill="none"/>
+            <path d="M0,80 L20,75 L40,60 L60,65 L80,45 L100,50 L120,35 L140,40 L160,25 L180,30 L200,15 L220,20 L240,10 L260,18 L280,12 L280,120 L0,120Z" fill="url(#chartGrad)"/>
+            <!-- Candles -->
+            <rect x="15" y="68" width="6" height="14" fill="#00d4aa" rx="1"/>
+            <rect x="35" y="55" width="6" height="12" fill="#00d4aa" rx="1"/>
+            <rect x="55" y="58" width="6" height="15" fill="#ef4444" rx="1"/>
+            <rect x="75" y="40" width="6" height="12" fill="#00d4aa" rx="1"/>
+            <rect x="95" y="43" width="6" height="14" fill="#ef4444" rx="1"/>
+            <rect x="115" y="30" width="6" height="11" fill="#00d4aa" rx="1"/>
+            <rect x="135" y="33" width="6" height="14" fill="#ef4444" rx="1"/>
+            <rect x="155" y="20" width="6" height="12" fill="#00d4aa" rx="1"/>
+            <rect x="175" y="24" width="6" height="13" fill="#00d4aa" rx="1"/>
+            <rect x="195" y="10" width="6" height="12" fill="#00d4aa" rx="1"/>
+            <rect x="215" y="14" width="6" height="14" fill="#ef4444" rx="1"/>
+            <rect x="235" y="6" width="6" height="10" fill="#00d4aa" rx="1"/>
+            <rect x="255" y="12" width="6" height="13" fill="#00d4aa" rx="1"/>
+          </svg>
+        </div>
+        <!-- Order Book -->
+        <div class="phone-orderbook">
+          <div class="orderbook-col">
+            <div class="header">Bids</div>
+            <div class="ob-row buy"><span>67,840</span><span class="amt">0.482</span></div>
+            <div class="ob-row buy"><span>67,838</span><span class="amt">1.205</span></div>
+            <div class="ob-row buy"><span>67,835</span><span class="amt">0.871</span></div>
+          </div>
+          <div class="orderbook-col">
+            <div class="header">Asks</div>
+            <div class="ob-row sell"><span>67,845</span><span class="amt">0.324</span></div>
+            <div class="ob-row sell"><span>67,848</span><span class="amt">0.756</span></div>
+            <div class="ob-row sell"><span>67,850</span><span class="amt">1.103</span></div>
+          </div>
+        </div>
+        <!-- Buy/Sell buttons -->
+        <div class="phone-bottom">
+          <button class="btn-buy">BUY</button>
+          <button class="btn-sell">SELL</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<a class="btn" href="https://twoj-link-ref.com" target="_blank">
-Odbierz bonus
-</a>
+  <div class="app-badges">
+    <a class="app-badge" href="https://www.bitmart.com/invited?r=cMec8H&t=1" target="_blank" rel="noopener">
+      <span class="app-badge-icon">&#9679;</span> Download for iOS
+    </a>
+    <a class="app-badge" href="https://www.bitmart.com/invited?r=cMec8H&t=1" target="_blank" rel="noopener">
+      <span class="app-badge-icon">&#9654;</span> Download for Android
+    </a>
+  </div>
+</section>
 
-</div>
+<!-- CTA Mid Banner -->
+<section class="cta-mid">
+  <div class="cta-mid-inner">
+    <div class="cta-mid-text">
+      <h3>Ready to claim your bonus?</h3>
+      <p>Join 120,000+ traders already participating in the event.</p>
+    </div>
+    <a class="cta-btn" href="https://www.bitmart.com/invited?r=cMec8H&t=1" target="_blank" rel="noopener">
+      Sign Up Free
+    </a>
+  </div>
+</section>
 
-<div class="footer">
-Strona partnerska – link referencyjny
-</div>
+<!-- FAQ Section -->
+<section class="faq-section">
+  <h2>Frequently Asked <span>Questions</span></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Is BitMart available worldwide?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, BitMart is available in most countries worldwide. Some restrictions may apply depending on your jurisdiction. Check the BitMart website for the full list of supported regions.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Do I need KYC to participate?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Basic trading is available without KYC, but completing identity verification unlocks higher withdrawal limits and access to all anniversary event rewards.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How do I claim my rewards?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>After signing up through the referral link and completing your first trade of at least 20 USDT, rewards are automatically credited to your BitMart account within 48 hours.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>What is the minimum trade amount?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>You need to complete a trade worth at least 20 USDT to qualify for the anniversary event rewards. There is no maximum limit.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How long does the event last?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>The 8th Anniversary event is a limited-time promotion. Check the countdown timer on this page for the remaining time. Don't miss out!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Bottom Section -->
+<section class="cta-bottom">
+  <h2>Don't Miss Out</h2>
+  <p class="subtitle">Sign up through the referral link and start trading with a bonus.</p>
+
+  <!-- Bottom Countdown -->
+  <div class="countdown" id="countdown-bottom">
+    <span class="countdown-label">Hurry! Event ends in:</span>
+    <div class="countdown-box"><div class="num" id="cd-days-b">12</div><div class="lbl">Days</div></div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-box"><div class="num" id="cd-hours-b">23</div><div class="lbl">Hours</div></div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-box"><div class="num" id="cd-minutes-b">59</div><div class="lbl">Min</div></div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-box"><div class="num" id="cd-seconds-b">59</div><div class="lbl">Sec</div></div>
+  </div>
+
+  <div class="cta-bottom-buttons">
+    <a class="cta-btn" href="https://www.bitmart.com/invited?r=cMec8H&t=1" target="_blank" rel="noopener">
+      Claim Your Bonus
+    </a>
+    <a class="cta-btn-secondary" href="https://www.bitmart.com/invited?r=cMec8H&t=1" target="_blank" rel="noopener">
+      Create Free Account
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>Independent promotional page &ndash; BitMart referral link (code: cMec8H)</p>
+  <p style="margin-top:8px;">Cryptocurrencies involve risk. Invest responsibly. This is not financial advice.</p>
+</footer>
+
+<!-- Countdown Timer Script -->
+<script>
+(function(){
+  // Set countdown to 12 days from first visit (persists per session)
+  var stored = sessionStorage.getItem('cd_end');
+  var end;
+  if(stored && Number(stored) > Date.now()){
+    end = Number(stored);
+  } else {
+    end = Date.now() + 12*24*60*60*1000;
+    sessionStorage.setItem('cd_end', end);
+  }
+
+  function pad(n){ return n < 10 ? '0'+n : n; }
+
+  function update(){
+    var diff = Math.max(0, end - Date.now());
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+
+    // Hero countdown
+    var ed = document.getElementById('cd-days');
+    var eh = document.getElementById('cd-hours');
+    var em = document.getElementById('cd-minutes');
+    var es = document.getElementById('cd-seconds');
+    if(ed){ ed.textContent = pad(d); }
+    if(eh){ eh.textContent = pad(h); }
+    if(em){ em.textContent = pad(m); }
+    if(es){ es.textContent = pad(s); }
+
+    // Bottom countdown
+    var bd = document.getElementById('cd-days-b');
+    var bh = document.getElementById('cd-hours-b');
+    var bm = document.getElementById('cd-minutes-b');
+    var bs = document.getElementById('cd-seconds-b');
+    if(bd){ bd.textContent = pad(d); }
+    if(bh){ bh.textContent = pad(h); }
+    if(bm){ bm.textContent = pad(m); }
+    if(bs){ bs.textContent = pad(s); }
+
+    if(diff > 0){ requestAnimationFrame(function(){ setTimeout(update, 1000); }); }
+  }
+  update();
+
+  // Animated social proof counter
+  var counterEl = document.getElementById('social-proof-count');
+  if(counterEl){
+    var target = 120847;
+    var current = 0;
+    var duration = 2000;
+    var start = null;
+    function animateCount(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      current = Math.floor(progress * target);
+      counterEl.textContent = current.toLocaleString('en-US') + '+';
+      if(progress < 1) requestAnimationFrame(animateCount);
+    }
+    var observer = new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){
+        requestAnimationFrame(animateCount);
+        observer.disconnect();
+      }
+    });
+    observer.observe(counterEl);
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = this.parentElement;
+      var isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(function(el){ el.classList.remove('active'); });
+      if(!isOpen) item.classList.add('active');
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
